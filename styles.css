@@ -217,9 +217,13 @@ h4 {
 .img-description {
     border: 2px solid black;
     border-radius: 15px;
+    flex: 1; 
+    max-width: calc(33.33% - 10px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* ✅ Main container for layout */
 .fashion {
     display: flex;
     justify-content: space-between; 
@@ -230,14 +234,6 @@ h4 {
     flex-wrap: wrap; 
 }
 
-
-.img-description {
-    flex: 1; 
-    max-width: calc(33.33% - 10px); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 
 .fashion-container {
@@ -308,7 +304,7 @@ h4 {
 }
 
 
-.content {
+.content, .outfit-text-content {
     width: 55%;
     padding: 20px;
     text-align: left;
@@ -395,7 +391,46 @@ p {
     text-align: center;
   }
   
-  /* === MEDIA QUERIES === */
+  .outfits1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;  
+    padding: 40px;
+  }
+
+  .outfit-text-content {
+    align-items: center;
+  }
+  
+  /* Text side */
+  .outfit-text-content {
+    flex: 1;  
+  }
+  
+  .outfit-text-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .outfit-text-content p {
+    font-size: 1.2rem;
+  }
+  
+  /* Image side */
+  .outfit-container1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .outfit-container1 img {
+    width: 100%;
+    max-width: 400px;  
+    height: auto;
+    border-radius: 15px;
+  }
+  
   
   /* Tablet (768px) */
   @media (max-width: 768px) {
@@ -416,6 +451,21 @@ p {
       gap: 10px;
     }
   }
+  @media (max-width: 768px) {
+    .outfits1 {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .outfit-container1 {
+      width: 100%;
+    }
+  
+    .outfit-container1 img {
+      max-width: 100%;
+    }
+  }
+  
   
   /* Mobile (480px) */
   @media (max-width: 480px) {
@@ -475,8 +525,6 @@ p {
   }
   
 
-  
-  /* Default - Desktop (3 Columns) */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -492,6 +540,7 @@ p {
     border: 2px solid black;
   }
   
+  
   .product-card img {
     width: 100%;
     height: 250px;
@@ -499,9 +548,25 @@ p {
   }
   
   .product-card p {
-    padding: 15px 0;
-    font-size: 25px;
+    padding: 5px 0;
+    font-size: 35px;
     font-family: "Bebas Neue";
+  }
+
+  .product-card ul {
+    border-top: 2px solid black;;
+    list-style: none;
+    padding: 15px;     
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #f8b3b3;  /* Example: Soft red when hovered */
+    text-decoration: underline;
   }
   @media (max-width: 786px) {
     .product-grid {
