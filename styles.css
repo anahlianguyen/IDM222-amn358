@@ -1,0 +1,447 @@
+ 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+*/
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pinyon-script-regular {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-<uniquifier> {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+  
+/* ✅ Nav Bar (Fixed) */
+.navbar {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+
+}
+
+.navbar .logo {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+/* ✅ Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+/* ✅ Responsive Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(245, 245, 245, 0.7);
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #menu-checkbox:checked ~ .nav-links {
+        display: flex;
+    }
+} /* 🔹 This closes the media query properly! */
+
+/* ✅ General Styles */
+body, h4 {
+    font-family: Inter, sans-serif;
+    font-weight: 200;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-family: "Bebas Neue";
+}
+
+
+h4 {
+    text-transform: uppercase;
+}
+
+/* Container for image and text */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;  
+    gap: 20px;  
+    border-bottom: 2px solid black;
+}
+
+/* Style for image container */
+.image-container img {
+    max-width: 100%;  /* Ensures the image fits within its container */
+    height: auto;    /* Maintain the aspect ratio of the image */
+}
+
+/* Text container */
+.text-container {
+    display: flex;
+    flex-direction: column;  /* Stack text vertically */
+    align-items: center;
+}
+
+.custom-button {
+    font-size: 15px;
+    text-transform: uppercase;
+    max-width: 1000px;
+    display: inline-block;
+    text-align: center;
+    padding: 0.7em 2em;
+    border: 1px solid black;
+    border-radius: 50px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.custom-button:hover {
+    background-color: black;  /* Change background color */
+    color: white;  /* Change text color */
+    border-color: white;  /* Change border color */
+    transform: scale(1.05);  /* Slightly enlarge the button */
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+
+/* Media Query for screens with a max-width of 786px */
+@media screen and (max-width: 786px) {
+    .container {
+        grid-template-columns: 1fr;  /* Stack image and text vertically on smaller screens */
+    }
+
+    .image-container {
+        margin-bottom: 20px;  /* Adds space between image and text */
+    }
+}
+
+/* Media Query for screens with a max-width of 480px */
+@media screen and (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;  /* Stack image and text vertically on smaller screens */
+    }
+
+    .image-container {
+        margin-bottom: 15px;  /* Adds space between image and text */
+    }
+}
+
+/* HEADER */
+
+
+.text-container {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    font-size: 25px;
+}
+
+.text-container h2 {
+    font-family: "Pinyon Script";
+    font-size: 50px;
+    color: black;
+    margin-top: -50px;
+}
+
+.text-container p {
+    margin-top: 20px;
+}
+
+/*FASHION BEGINS*/
+
+.img-description {
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+/* ✅ Main container for layout */
+.fashion {
+    display: flex;
+    justify-content: space-between; /* Evenly distributes items */
+    gap: 15px; /* Space between img-description divs */
+    margin: 0 10px; /* 10px margin on left and right */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    flex-wrap: wrap; /* Allows responsiveness */
+}
+
+/* ✅ Each image + text container */
+.img-description {
+    flex: 1; /* Makes it flexible */
+    max-width: calc(33.33% - 10px); /* 3 columns with space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ✅ Ensures image container fits inside img-description */
+.fashion-container {
+    width: 100%; /* Full width of parent */
+}
+
+/* ✅ Makes images responsive */
+.fashion-container img {
+    width: 100%; /* Ensures the image scales */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 14px 14px 0 0;;
+}
+
+/* ✅ Responsive for tablets (758px) - Still 3 columns but smaller */
+@media screen and (max-width: 758px) {
+    .img-description {
+        max-width: calc(33.33% - 10px); /* Makes it smaller but still 3 per row */
+    }
+}
+
+/* ✅ Responsive for mobile (480px) - Stacked */
+@media screen and (max-width: 480px) {
+    .fashion {
+        flex-direction: column; /* Stacks items */
+        align-items: center; /* Centers content */
+    }
+    
+    .img-description {
+        max-width: 100%; /* Full width for stacking */
+    }
+}
+
+
+.title {
+    border-top: 2px solid black;
+    font-size: 3rem;
+    font-family: "Pinyon Script", cursive; 
+    color: black;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ✅ IMAGE & TEXT SIDE-BY-SIDE (Always for Desktop) */
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 15px;
+    border: 2px solid black;
+    background: rgba(245, 245, 245, 0.7);
+}
+
+/* ✅ Image Styling */
+.section img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+/* ✅ Content Styling */
+.content {
+    width: 55%;
+    padding: 20px;
+    text-align: left;
+    color: black;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+/* 🟡 MOBILE (≤ 480px) → Image on top, text below */
+@media (max-width: 480px) {
+    .section {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+    }
+
+    .section img {
+        width: 100%; /* Full width */
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+/*LOOKBOOK CONTENT*/
+
+/* === GENERAL STYLES === */
+.lookbook-container, .outfits {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .image-content img,
+  .outfit-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* === LOOKBOOK SECTION === */
+  .lookbook-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  
+  /* === OUTFITS SECTION === */
+  .outfits {
+    display: flex;            /* Flex for 1/4 text, 3/4 images */
+    align-items: flex-start;
+  }
+  
+  .outfit-text-content {
+    flex: 1;
+  }
+  
+  .outfit-container {
+    flex: 3;
+    border: 2px solid black;
+    border-radius: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .outfit-image {
+    flex: 1 1 30%;
+    text-align: center;
+  }
+  
+  /* === MEDIA QUERIES === */
+  
+  /* Tablet (768px) */
+  @media (max-width: 768px) {
+    .lookbook-container {
+      gap: 15px;
+    }
+  
+    .outfits {
+      gap: 15px;
+    }
+  
+    .text-content,
+    .outfit-text-content {
+      font-size: 0.9rem;
+    }
+  
+    .outfit-container {
+      gap: 10px;
+    }
+  }
+  
+  /* Mobile (480px) */
+  @media (max-width: 480px) {
+    .lookbook-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .outfits {
+      flex-direction: column;
+    }
+  
+    .outfit-text-content,
+    .outfit-container {
+      flex: none;
+      width: 100%;
+    }
+  
+    .outfit-container {
+      flex-direction: column;
+    }
+  
+    .outfit-image {
+      width: 100%;
+    }
+  }
+  
